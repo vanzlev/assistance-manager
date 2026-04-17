@@ -20,7 +20,8 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 // PostgreSQL connection (Supabase)
 const db = new Pool({
   connectionString: process.env.DATABASE_URL,
-  ssl: { rejectUnauthorized: false }
+  ssl: { rejectUnauthorized: false },
+  family: 4
 });
 
 db.connect((err) => {
